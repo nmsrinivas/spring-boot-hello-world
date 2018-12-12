@@ -15,7 +15,7 @@ stages {
         steps {
         script {
           try{
-          sh "mvn clean install -U -Dmaven.test.skip=true"
+          sh "mvn clean install"
            currentBuild.result = 'SUCCESS'
           } catch(Exception err){
           currentBuild.result = 'FAILURE'
