@@ -10,9 +10,7 @@ stages {
        
        }
       }
-     }
-   }
-       
+     }      
       stage('Build customer app code'){
         steps {
         script {
@@ -26,6 +24,7 @@ stages {
       }
      }
     }
+}
        
         
        
