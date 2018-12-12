@@ -16,7 +16,6 @@ stages {
         script {
           try{
           sh "mvn clean install"
-          sh "java -version"
            currentBuild.result = 'SUCCESS'
           } catch(Exception err){
           currentBuild.result = 'FAILURE'
