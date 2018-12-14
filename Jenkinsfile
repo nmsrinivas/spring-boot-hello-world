@@ -5,8 +5,8 @@ stages {
     steps {
       script {
        checkout scm
-       def mvnHome = tool 'maven-3'
-       def javaHome = tool 'JAVA_1.8'
+       //def mvnHome = tool 'maven-3'
+       //def javaHome = tool 'JAVA_1.8'
        
        }
       }
@@ -14,12 +14,9 @@ stages {
       stage('Build customer app code'){
         steps {
         script {
-          try{
-          sh "mvn clean install"
-           currentBuild.result = 'SUCCESS'
-          } catch(Exception err){
-          currentBuild.result = 'FAILURE'
-         }
+       sh 'sudo yum -y install unzip java-1.8.0-openjdk'
+       sh 'sudo yum -y install maven'
+       sh 'mvn clean install'
        }
       }
      }
